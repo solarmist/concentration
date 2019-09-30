@@ -11,13 +11,39 @@ import UIKit
 class ViewController: UIViewController {
     private lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
 
-    @IBOutlet private weak var winLabel: UILabel!
-    @IBOutlet private weak var flipCountLabel: UILabel!
+    @IBOutlet weak var flipsLabel: UILabel! {
+        didSet {
+            updateLabel()
+        }
+    }
+    @IBOutlet private weak var winLabel: UILabel! {
+        didSet {
+            updateLabel()
+        }
+    }
+    @IBOutlet private weak var flipCountLabel: UILabel! {
+        didSet {
+            updateLabel()
+        }
+    }
     @IBOutlet private weak var newGameButton: UIButton!
     @IBOutlet private var cardButtons: [UIButton]!
 
+    private func updateLabel() {
+        let attributes: [NSAttributedString.Key: Any] = [
+            .strokeWidth: 5.0,
+            .strokeColor: #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        ]
+        let attributedString = NSAttributedString(string: flipCountLabel.text!, attributes: attributes)
+        flipCountLabel.attributedText = attributedString
+
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+//        winLabel.attributedText = updateLabel()
+        // TODO: Where can I set this so it's updated correctly?
+        // Also, what is updateLabel getting passed into it.
         newGameButton.layer.cornerRadius = 20
         winLabel.layer.cornerRadius = 20
         newGameButton.clipsToBounds = true
@@ -28,8 +54,11 @@ class ViewController: UIViewController {
 
     @IBAction private func touchNewGame(_ sender: UIButton) {
         // Start a new game
+        for (_, curEmoji) in emoji {
+            emojiChoices += curEmoji
+        }
         print("Staring a new game")
-        emojiChoices.shuffle()
+//        emojiChoices.shuffle()
         game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
         newGameButton.isHidden = true
         newGameButton.isEnabled = false
@@ -69,11 +98,30 @@ class ViewController: UIViewController {
         }
     }
 
-    private var emojiChoices = ["🦇", "😱", "🙀", "😈", "🎃", "👻", "🍭", "🍬", "🍎", "💀",  // 10
-                                "👺", "👽", "🕸", "🤖", "🧛🏻‍♀️"]
+//    private var emojiChoices = ["🦇", "😱", "🙀", "😈", "🎃", "👻", "🍭", "🍬", "🍎", "💀",  // 10
+//                                "👺", "👽", "🕸", "🤖", "🧛🏻‍♀️"]
+    private var emojiChoices = "🦇😱🙀😈🎃👻🍭🍬🍎💀👺👽🕸🤖🧛🏻‍♀️"
 
-    func emoji(for card: Card) -> String {
-        print(emojiChoices[card.identifier % emojiChoices.count])
-        return emojiChoices[card.identifier % emojiChoices.count]
+    private var emoji = [Card: String]()
+
+    private func emoji(for card: Card) -> String {
+        if emoji[card] == nil, emojiChoices.count > 0 {
+            let randomStringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.arc4random)
+            emoji[card] = String(emojiChoices.remove(at: randomStringIndex))
+        }
+        print(emoji[card] ?? "?")
+        return emoji[card] ?? "?"
+    }
+}
+
+extension Int {
+    var arc4random: Int {
+        if self > 0 {
+            return Int(arc4random_uniform(UInt32(self)))
+        } else if self < 0 {
+            return -Int(arc4random_uniform(UInt32(abs(self))))
+        } else {
+            return 0
+        }
     }
 }

@@ -8,8 +8,16 @@
 
 import Foundation
 
-struct Card {
+struct Card: Hashable {
     private static var identifierFactory = 0
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
+    }
+
+    static func == (lhs: Card, rhs: Card) -> Bool {
+        lhs.identifier == rhs.identifier
+    }
 
     var isFaceUp = false
     var isMatched = false
