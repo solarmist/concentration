@@ -17,16 +17,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Kko-3S-nPy" userLabel="Flip Text">
-                                <rect key="frame" x="131.66666666666666" y="784" width="150.99999999999997" height="60"/>
+                                <rect key="frame" x="101.33333333333333" y="784" width="211.66666666666669" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flips:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AA2-bJ-CIE">
-                                        <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="60"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AA2-bJ-CIE">
+                                        <rect key="frame" x="0.0" y="0.0" width="173" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9S-zH-rN1">
-                                        <rect key="frame" x="120.33333333333336" y="0.0" width="30.666666666666671" height="60"/>
+                                        <rect key="frame" x="181" y="0.0" width="30.666666666666657" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>

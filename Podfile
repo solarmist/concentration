@@ -7,15 +7,4 @@ target 'Concentration' do
   use_frameworks!
 
   # Pods for Concentration
-
-  target 'ConcentrationTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'ConcentrationUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
