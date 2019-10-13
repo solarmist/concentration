@@ -8,6 +8,16 @@
 
 import UIKit
 
+let emojiThemes = [  // Each of these must be at least 8 emoji long
+    "halloween": "🦇😱🙀😈🎃👻🍭🍬🍎💀👺👽🕸🤖🧛🏻‍♀️",
+    "food": "🍎🥑🍠🥞🍕🥪🌮🍖🥝🥗🌭🍜🍚🍙🍟",
+    "faces": "😀☺️😍😭🥶😡🤢🥴🤑🤐😵😱",
+    "animals": "🐥🐒🐷🐹🐭🐶🐨🐸🐍🦀🐡🦐🦂🕷",
+    "flags": "🇦🇽🇧🇩🇦🇮🇦🇶🇨🇦🇨🇻🇵🇫🇫🇴🇯🇵🇮🇩🇱🇧🇰🇵🇳🇴🇹🇿🇺🇸🇹🇴🇻🇳🇬🇧",
+    "activities": "🤸‍♀️🏋️‍♀️🧘‍♀️🤽‍♀️🏊‍♀️🏄‍♀️🏌️‍♀️🤾‍♂️🚴‍♀️🚣‍♀️🧗‍♂️"
+]
+
+
 class ViewController: UIViewController {
     private lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
 
@@ -36,14 +46,9 @@ class ViewController: UIViewController {
         ]
         let attributedString = NSAttributedString(string: flipCountLabel.text!, attributes: attributes)
         flipCountLabel.attributedText = attributedString
-
     }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-//        winLabel.attributedText = updateLabel()
-        // TODO: Where can I set this so it's updated correctly?
-        // Also, what is updateLabel getting passed into it.
         newGameButton.layer.cornerRadius = 20
         winLabel.layer.cornerRadius = 20
         newGameButton.clipsToBounds = true
@@ -54,11 +59,11 @@ class ViewController: UIViewController {
 
     @IBAction private func touchNewGame(_ sender: UIButton) {
         // Start a new game
-        for (_, curEmoji) in emoji {
-            emojiChoices += curEmoji
-        }
-        print("Staring a new game")
-//        emojiChoices.shuffle()
+        // These are statically defined so forcefully accessing the values is fine.
+        currentTheme = Array(emojiThemes.keys).randomElement()!
+        emojiChoices = ""
+        emoji = [Card: String]()
+        print("Staring a new game with theme \(currentTheme)")
         game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
         newGameButton.isHidden = true
         newGameButton.isEnabled = false
@@ -81,7 +86,7 @@ class ViewController: UIViewController {
     }
 
     func updateViewFromModel() {
-        flipCountLabel.text = "\(game.flipCount)"
+        flipCountLabel.text = "\(game.score)"
         for index in cardButtons.indices {
             let card = game.cards[index]
             let button = cardButtons[index]
@@ -98,17 +103,20 @@ class ViewController: UIViewController {
         }
     }
 
-//    private var emojiChoices = ["🦇", "😱", "🙀", "😈", "🎃", "👻", "🍭", "🍬", "🍎", "💀",  // 10
-//                                "👺", "👽", "🕸", "🤖", "🧛🏻‍♀️"]
-    private var emojiChoices = "🦇😱🙀😈🎃👻🍭🍬🍎💀👺👽🕸🤖🧛🏻‍♀️"
-
+    var currentTheme: String = Array(emojiThemes.keys).randomElement()!
+    private var emojiChoices: String = ""
     private var emoji = [Card: String]()
 
     private func emoji(for card: Card) -> String {
+        if emojiChoices.count == 0, emoji.count == 0 {
+            emojiChoices = String(emojiThemes[currentTheme]!.shuffled())
+        }
+
         if emoji[card] == nil, emojiChoices.count > 0 {
             let randomStringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.arc4random)
             emoji[card] = String(emojiChoices.remove(at: randomStringIndex))
         }
+
         print(emoji[card] ?? "?")
         return emoji[card] ?? "?"
     }

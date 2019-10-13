@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "Flips:"; ObjectID = "AA2-bJ-CIE"; */
-"AA2-bJ-CIE.text" = "Flips:";
+"AA2-bJ-CIE.text" = "Score:";
 
 /* Class = "UILabel"; text = "You Win!"; ObjectID = "Gc7-x9-Edm"; */
 "Gc7-x9-Edm.text" = "You Win!";

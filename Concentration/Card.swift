@@ -20,6 +20,7 @@ struct Card: Hashable {
     }
 
     var isFaceUp = false
+    var indicesSeen: [Int] = []
     var isMatched = false
     var identifier: Int
 
