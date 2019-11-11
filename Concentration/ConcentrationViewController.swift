@@ -8,17 +8,7 @@
 
 import UIKit
 
-let emojiThemes = [  // Each of these must be at least 8 emoji long
-    "halloween": "🦇😱🙀😈🎃👻🍭🍬🍎💀👺👽🕸🤖🧛🏻‍♀️",
-    "food": "🍎🥑🍠🥞🍕🥪🌮🍖🥝🥗🌭🍜🍚🍙🍟",
-    "faces": "😀☺️😍😭🥶😡🤢🥴🤑🤐😵😱",
-    "animals": "🐥🐒🐷🐹🐭🐶🐨🐸🐍🦀🐡🦐🦂🕷",
-    "flags": "🇦🇽🇧🇩🇦🇮🇦🇶🇨🇦🇨🇻🇵🇫🇫🇴🇯🇵🇮🇩🇱🇧🇰🇵🇳🇴🇹🇿🇺🇸🇹🇴🇻🇳🇬🇧",
-    "activities": "🤸‍♀️🏋️‍♀️🧘‍♀️🤽‍♀️🏊‍♀️🏄‍♀️🏌️‍♀️🤾‍♂️🚴‍♀️🚣‍♀️🧗‍♂️"
-]
-
-
-class ViewController: UIViewController {
+class ConcentrationViewController: UIViewController {
     private lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
 
     @IBOutlet weak var flipsLabel: UILabel! {
@@ -41,14 +31,15 @@ class ViewController: UIViewController {
 
     private func updateLabel() {
         let attributes: [NSAttributedString.Key: Any] = [
-            .strokeWidth: 5.0,
-            .strokeColor: #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+            .strokeWidth: 5.0
+//            .strokeColor: #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
         ]
         let attributedString = NSAttributedString(string: flipCountLabel.text!, attributes: attributes)
         flipCountLabel.attributedText = attributedString
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        theme = "🦇😱🙀😈🎃👻🍭🍬🍎💀👺👽🕸🤖🧛🏻"  // Set the initial theme
         newGameButton.layer.cornerRadius = 20
         winLabel.layer.cornerRadius = 20
         newGameButton.clipsToBounds = true
@@ -60,10 +51,7 @@ class ViewController: UIViewController {
     @IBAction private func touchNewGame(_ sender: UIButton) {
         // Start a new game
         // These are statically defined so forcefully accessing the values is fine.
-        currentTheme = Array(emojiThemes.keys).randomElement()!
-        emojiChoices = ""
-        emoji = [Card: String]()
-        print("Staring a new game with theme \(currentTheme)")
+        print("Staring a new game with theme \(theme ?? "??")")
         game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
         newGameButton.isHidden = true
         newGameButton.isEnabled = false
@@ -86,6 +74,11 @@ class ViewController: UIViewController {
     }
 
     func updateViewFromModel() {
+        // Guard our code against being called during prepare
+        guard cardButtons != nil else {
+            print("Trying to update view before outlets are set")
+            return
+        }
         flipCountLabel.text = "\(game.score)"
         for index in cardButtons.indices {
             let card = game.cards[index]
@@ -103,14 +96,19 @@ class ViewController: UIViewController {
         }
     }
 
-    var currentTheme: String = Array(emojiThemes.keys).randomElement()!
+    var theme: String? {
+        didSet {
+            emojiChoices = theme ?? ""
+            emoji = [:]
+            updateViewFromModel()
+        }
+    }
+
     private var emojiChoices: String = ""
     private var emoji = [Card: String]()
 
     private func emoji(for card: Card) -> String {
-        if emojiChoices.count == 0, emoji.count == 0 {
-            emojiChoices = String(emojiThemes[currentTheme]!.shuffled())
-        }
+        print("\(emojiChoices)")
 
         if emoji[card] == nil, emojiChoices.count > 0 {
             let randomStringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.arc4random)
