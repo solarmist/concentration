@@ -39,7 +39,9 @@ class ConcentrationViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        theme = "🦇😱🙀😈🎃👻🍭🍬🍎💀👺👽🕸🤖🧛🏻"  // Set the initial theme
+        if theme == nil {
+            theme = "🦇😱🙀😈🎃👻🍭🍬🍎💀👺👽🕸🤖🧛🏻"  // Set the initial theme
+        }
         newGameButton.layer.cornerRadius = 20
         winLabel.layer.cornerRadius = 20
         newGameButton.clipsToBounds = true

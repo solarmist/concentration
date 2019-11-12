@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z6k-3K-5Mj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0LP-dm-bTa">
     <device id="ipad12_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
@@ -17,14 +17,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BCg-HE-8dP">
-                                <rect key="frame" x="108.5" y="345" width="158" height="364"/>
+                                <rect key="frame" x="108.5" y="322.5" width="158" height="364"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHa-nH-YEy">
                                         <rect key="frame" x="0.0" y="0.0" width="158" height="54"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="Halloween"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="5SW-8g-Kqf"/>
+                                            <action selector="changeTheme:" destination="GMN-Pk-qe5" eventType="touchUpInside" id="luF-NS-RdE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbU-qB-6JA">
@@ -32,7 +32,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="Food"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="HI5-Pe-Ezx"/>
+                                            <action selector="changeTheme:" destination="GMN-Pk-qe5" eventType="touchUpInside" id="FSZ-G0-55H"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2QS-tQ-rgU">
@@ -40,7 +40,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="Faces"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="kat-e9-iVw"/>
+                                            <action selector="changeTheme:" destination="GMN-Pk-qe5" eventType="touchUpInside" id="ss1-85-wuI"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeN-zQ-sQa">
@@ -48,7 +48,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="Animals"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="I5S-On-Nth"/>
+                                            <action selector="changeTheme:" destination="GMN-Pk-qe5" eventType="touchUpInside" id="xMM-Sj-WQs"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Iw-my-Txe">
@@ -56,7 +56,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="Flags"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="t5V-L2-xxS"/>
+                                            <action selector="changeTheme:" destination="GMN-Pk-qe5" eventType="touchUpInside" id="hN8-zM-6ZZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhA-Cn-stX">
@@ -64,7 +64,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="Activities"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="OPV-Sm-Iqz"/>
+                                            <action selector="changeTheme:" destination="GMN-Pk-qe5" eventType="touchUpInside" id="T7X-pK-XU5"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -78,6 +78,9 @@
                         <viewLayoutGuide key="safeArea" id="sky-8t-GJ2"/>
                     </view>
                     <navigationItem key="navigationItem" id="Zc9-dU-U6M"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="GQN-58-iOM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4R-Pt-6K9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,7 +95,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Kko-3S-nPy" userLabel="Flip Text">
-                                <rect key="frame" x="389.5" y="926" width="212" height="60"/>
+                                <rect key="frame" x="389.5" y="881" width="212" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AA2-bJ-CIE">
                                         <rect key="frame" x="0.0" y="0.0" width="173" height="60"/>
@@ -109,7 +112,7 @@
                                 </subviews>
                             </stackView>
                             <stackView contentMode="center" axis="vertical" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="K1v-mh-MPh" userLabel="New Game Stack">
-                                <rect key="frame" x="377.5" y="427" width="236" height="141"/>
+                                <rect key="frame" x="377.5" y="404.5" width="236" height="141"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Win!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gc7-x9-Edm">
                                         <rect key="frame" x="23.5" y="0.0" width="189" height="61"/>
@@ -331,10 +334,62 @@
             </objects>
             <point key="canvasLocation" x="954" y="942"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Item 2-->
+        <scene sceneID="hh3-PC-iek">
+            <objects>
+                <viewController id="Lyg-Gh-mHq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U2b-v1-EVt">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="9BA-E8-dRm"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="nOy-d7-hJK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eij-K8-EnG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-795" y="1454"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="3Rj-Au-7UR">
+            <objects>
+                <viewController id="6LH-hj-PGo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cgw-91-Rd4">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Wkh-2f-bJc"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="th1-6f-2Rk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3qQ-Ez-KcQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-813" y="-226"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="dDo-6H-boe">
+            <objects>
+                <tabBarController id="0LP-dm-bTa" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iJ7-Ja-L9w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="z6k-3K-5Mj" kind="relationship" relationship="viewControllers" id="6cG-yy-O9d"/>
+                        <segue destination="Lyg-Gh-mHq" kind="relationship" relationship="viewControllers" id="wRp-nZ-M6O"/>
+                        <segue destination="6LH-hj-PGo" kind="relationship" relationship="viewControllers" id="Rbf-o7-y6Z"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g3l-d3-1ma" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1274" y="599"/>
+        </scene>
+        <!--Concentration-->
         <scene sceneID="956-DL-79b">
             <objects>
                 <splitViewController id="z6k-3K-5Mj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Concentration" id="YSu-J9-coe"/>
                     <navigationItem key="navigationItem" id="lHR-T1-cw7"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="detailViewController" id="Ih5-pT-oyb"/>
@@ -365,6 +420,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ih5-pT-oyb"/>
+        <segue reference="GQN-58-iOM"/>
     </inferredMetricsTieBreakers>
 </document>
