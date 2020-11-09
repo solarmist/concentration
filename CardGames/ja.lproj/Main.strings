@@ -1,0 +1,45 @@
+/* Class = "UITabBarItem"; title = "Set"; ObjectID = "pFQ-4z-307"; */
+"pFQ-4z-307.title" = "セットゲーム";
+
+/* Class = "UITabBarItem"; title = "Concentration"; ObjectID = "YSu-J9-coe"; */
+"YSu-J9-coe.title" = "神経衰弱";
+
+/* Class = "UILabel"; text = "Score:"; ObjectID = "AA2-bJ-CIE"; */
+"AA2-bJ-CIE.text" = "スコア:";
+/* Class = "UILabel"; text = "Score:"; ObjectID = "lZQ-ER-Fpw"; */
+"lZQ-ER-Fpw.text" = "スコア:";
+
+/* Class = "UILabel"; text = "You Win"; ObjectID = "Gc7-x9-Edm"; */
+"Gc7-x9-Edm.text" = "勝";
+
+/* Class = "UILabel"; text = "You Win"; ObjectID = "GRA-68-OJJ"; */
+"GRA-68-OJJ.text" = "勝";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "J9S-zH-rN1"; */
+"J9S-zH-rN1.text" = "999";
+/* Class = "UILabel"; text = "0"; ObjectID = "SA3-Mg-9T6"; */
+"SA3-Mg-9T6.text" = "999";
+
+
+/* Class = "UIButton"; normalTitle = "Halloween"; ObjectID = "QHa-nH-YEy"; */
+"QHa-nH-YEy.normalTitle" = "ハロウィン";
+/* Class = "UIButton"; normalTitle = "Halloween"; ObjectID = "CbU-qB-6JA"; */
+"CbU-qB-6JA.normalTitle" = "食べ物";
+/* Class = "UIButton"; normalTitle = "Halloween"; ObjectID = "2QS-tQ-rgU"; */
+"2QS-tQ-rgU.normalTitle" = "顔";
+/* Class = "UIButton"; normalTitle = "Halloween"; ObjectID = "ZeN-zQ-sQa"; */
+"ZeN-zQ-sQa.normalTitle" = "動物";
+/* Class = "UIButton"; normalTitle = "Halloween"; ObjectID = "9Iw-my-Txe"; */
+"9Iw-my-Txe.normalTitle" = "旗";
+/* Class = "UIButton"; normalTitle = "Halloween"; ObjectID = "QhA-Cn-stX"; */
+"QhA-Cn-stX.normalTitle" = "活動";
+
+/* Class = "UIButton"; normalTitle = "New Game"; ObjectID = "SAF-Ss-aV3"; */
+"SAF-Ss-aV3.normalTitle" = "ニュー・ゲーム";
+
+/* Class = "UIButton"; normalTitle = "New Game"; ObjectID = "Njg-fP-e0b"; */
+"Njg-fP-e0b.normalTitle" = "ニュー・ゲーム";
+
+/* Class = "UIButton"; normalTitle = "Deal"; ObjectID = "cgf-8Y-8HL"; */
+"cgf-8Y-8HL.normalTitle" = "配る";
+
