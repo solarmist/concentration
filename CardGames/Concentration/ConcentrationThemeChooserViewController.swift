@@ -10,7 +10,7 @@ import UIKit
 
 class ConcentrationThemeChooserViewController: UIViewController, UISplitViewControllerDelegate {
 
-    let themes = [  // Each of these must be at least 8 emoji long
+    var themes = [  // Each of these must be at least 8 emoji long
         "halloween": "🦇😱🙀😈🎃👻🍭🍬💀👺👽🕸🤖🧛🏻",
         "food": "🍎🥑🍠🥞🍕🥪🌮🍖🥝🥗🌭🍜🍚🍙🍟",
         "faces": "😀☺️😍😭🥶😡🤢🥴🤑🤐😵😱",
@@ -20,6 +20,14 @@ class ConcentrationThemeChooserViewController: UIViewController, UISplitViewCont
     ]
 
     override func awakeFromNib() {
+        //TODO: How can I not have to map these to each language individually?
+        themes["ハロウィン"] = themes["halloween"]
+        themes["食べ物"] = themes["food"]
+        themes["顔"] = themes["faces"]
+        themes["動物"] = themes["animals"]
+        themes["旗"] = themes["flags"]
+        themes["活動"] = themes["activities"]
+
         splitViewController?.delegate = self
     }
 
