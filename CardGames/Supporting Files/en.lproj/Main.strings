@@ -1,0 +1,53 @@
+/* Class = "UIButton"; normalTitle = "Faces"; ObjectID = "2QS-tQ-rgU"; */
+"2QS-tQ-rgU.normalTitle" = "Faces";
+
+/* Class = "UIButton"; normalTitle = "Flags"; ObjectID = "9Iw-my-Txe"; */
+"9Iw-my-Txe.normalTitle" = "Flags";
+
+/* Class = "UILabel"; text = "Score："; ObjectID = "AA2-bJ-CIE"; */
+"AA2-bJ-CIE.text" = "Score:";
+
+/* Class = "UIButton"; normalTitle = "Food"; ObjectID = "CbU-qB-6JA"; */
+"CbU-qB-6JA.normalTitle" = "Food";
+
+/* Class = "UIButton"; normalTitle = "Deal"; ObjectID = "cgf-8Y-8HL"; */
+"cgf-8Y-8HL.normalTitle" = "Deal";
+
+/* Class = "UILabel"; text = "You Win!"; ObjectID = "Gc7-x9-Edm"; */
+"Gc7-x9-Edm.text" = "You Win!";
+
+/* Class = "UILabel"; text = "You Win"; ObjectID = "GRA-68-OJJ"; */
+"GRA-68-OJJ.text" = "You Win!";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "J9S-zH-rN1"; */
+"J9S-zH-rN1.text" = "999";
+
+/* Class = "UILabel"; text = "Score:"; ObjectID = "lZQ-ER-Fpw"; */
+"lZQ-ER-Fpw.text" = "Score:";
+
+/* Class = "UIButton"; normalTitle = "New Game"; ObjectID = "Njg-fP-e0b"; */
+"Njg-fP-e0b.normalTitle" = "New Game!";
+
+/* Class = "UIViewController"; title = "Set Game"; ObjectID = "nRd-nW-Bqz"; */
+"nRd-nW-Bqz.title" = "Set Game";
+
+/* Class = "UITabBarItem"; title = "Set"; ObjectID = "pFQ-4z-307"; */
+"pFQ-4z-307.title" = "Set Game";
+
+/* Class = "UIButton"; normalTitle = "Activities"; ObjectID = "QhA-Cn-stX"; */
+"QhA-Cn-stX.normalTitle" = "Activities";
+
+/* Class = "UIButton"; normalTitle = "Halloween"; ObjectID = "QHa-nH-YEy"; */
+"QHa-nH-YEy.normalTitle" = "Halloween";
+
+/* Class = "UILabel"; text = "999"; ObjectID = "SA3-Mg-9T6"; */
+"SA3-Mg-9T6.text" = "999";
+
+/* Class = "UIButton"; normalTitle = "New Game"; ObjectID = "SAF-Ss-aV3"; */
+"SAF-Ss-aV3.normalTitle" = "New Game!";
+
+/* Class = "UITabBarItem"; title = "Concentration"; ObjectID = "YSu-J9-coe"; */
+"YSu-J9-coe.title" = "Concentration";
+
+/* Class = "UIButton"; normalTitle = "Animals"; ObjectID = "ZeN-zQ-sQa"; */
+"ZeN-zQ-sQa.normalTitle" = "Animals";

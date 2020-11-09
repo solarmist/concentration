@@ -36,15 +36,13 @@ class ConcentrationThemeChooserViewController: UIViewController, UISplitViewCont
         collapseSecondary secondaryViewController: UIViewController,
         onto primaryViewController: UIViewController
     ) -> Bool {
-        if let cvc = secondaryViewController as? ConcentrationViewController {
-            if cvc.theme == nil {
-                return true // I did not collapse this for you.
-            }
+        if let concentrationVC = secondaryViewController as? ConcentrationViewController,
+           concentrationVC.theme == nil {
+            return true // I did not collapse this for you.
         }
         return false
     }
     // MARK: - Navigation
-
     private var lastSeguedToConcentrationViewController: ConcentrationViewController?
 
     @IBAction func changeTheme(_ sender: Any) {

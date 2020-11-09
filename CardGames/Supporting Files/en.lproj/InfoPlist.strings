@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  CardGames
+
+  Created by Joshua Olson on 11/8/20.
+  Copyright © 2020 solarmist. All rights reserved.
+*/
+"CFBundleDisplayName" = "Card Games";
+"CFBundleName" = "solarmist.CardGames.en";
+"NSHumanReadableCopyright" = "Copyright © 2020 Solarmist, LLC.\nAll Rights Reserved.";
+

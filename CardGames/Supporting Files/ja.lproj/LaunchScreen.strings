@@ -2,7 +2,7 @@
 "jem-d3-9bg.text" = "セットカードゲーム";
 
 /* Class = "UILabel"; text = "Card Games"; ObjectID = "Lwo-YB-72e"; */
-"Lwo-YB-72e.text" = "カードゲーム";
+"Lwo-YB-72e.text" = "カード・ゲーム";
 
 /* Class = "UILabel"; text = "Concentration"; ObjectID = "sqH-KY-2xr"; */
 "sqH-KY-2xr.text" = "神経衰弱";

@@ -53,7 +53,10 @@ class ConcentrationViewController: UIViewController {
     @IBAction private func touchNewGame(_ sender: UIButton) {
         // Start a new game
         // These are statically defined so forcefully accessing the values is fine.
-        print("Staring a new game with theme \(theme ?? "??")")
+        let formatString = NSLocalizedString("Starting a new game with theme %s",
+                                             comment: "This is the name of the label")
+        print(String.localizedStringWithFormat(formatString, theme ?? "??"))
+//        print("Staring a new game with theme \(theme ?? "??")")
         game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
         newGameButton.isHidden = true
         newGameButton.isEnabled = false
