@@ -26,7 +26,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="Halloween"/>
                                         <connections>
-                                            <action selector="changeTheme:" destination="GMN-Pk-qe5" eventType="touchUpInside" id="luF-NS-RdE"/>
+                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Halloween" id="tey-Ci-lJq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbU-qB-6JA" userLabel="food">
@@ -34,7 +34,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="Food"/>
                                         <connections>
-                                            <action selector="changeTheme:" destination="GMN-Pk-qe5" eventType="touchUpInside" id="FSZ-G0-55H"/>
+                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Food" id="qav-En-gx4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2QS-tQ-rgU" userLabel="faces">
@@ -42,7 +42,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="Faces"/>
                                         <connections>
-                                            <action selector="changeTheme:" destination="GMN-Pk-qe5" eventType="touchUpInside" id="ss1-85-wuI"/>
+                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Faces" id="M9p-eE-YSQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeN-zQ-sQa" userLabel="animals">
@@ -50,7 +50,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="Animals"/>
                                         <connections>
-                                            <action selector="changeTheme:" destination="GMN-Pk-qe5" eventType="touchUpInside" id="xMM-Sj-WQs"/>
+                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Animals" id="yai-Xl-ZfQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Iw-my-Txe">
@@ -58,7 +58,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="Flags"/>
                                         <connections>
-                                            <action selector="changeTheme:" destination="GMN-Pk-qe5" eventType="touchUpInside" id="hN8-zM-6ZZ"/>
+                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Flags" id="TqC-L1-ADx"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhA-Cn-stX">
@@ -66,7 +66,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="Activities"/>
                                         <connections>
-                                            <action selector="changeTheme:" destination="GMN-Pk-qe5" eventType="touchUpInside" id="T7X-pK-XU5"/>
+                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Activities" id="Thi-ry-Dlt"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -80,9 +80,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Zc9-dU-U6M"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="GQN-58-iOM"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4R-Pt-6K9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -500,7 +497,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GQN-58-iOM"/>
+        <segue reference="Thi-ry-Dlt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="linkColor">
