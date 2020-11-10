@@ -42,12 +42,18 @@ class ConcentrationViewController: UIViewController {
         if theme == nil {
             theme = "🦇😱🙀😈🎃👻🍭🍬🍎💀👺👽🕸🤖🧛🏻"  // Set the initial theme
         }
-        newGameButton.layer.cornerRadius = 20
         winLabel.layer.cornerRadius = 20
-        newGameButton.clipsToBounds = true
-        newGameButton.isHidden = true
-        newGameButton.isEnabled = false
         winLabel.isHidden = true
+
+        newGameButton.layer.cornerRadius = 20
+        newGameButton.isHidden = true
+        newGameButton.clipsToBounds = true
+        newGameButton.isEnabled = false
+
+        navigationItem.title = NSLocalizedString("Pick theme", comment: "This is the link back to the theme choose")
+        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+        navigationItem.leftItemsSupplementBackButton = true
+
     }
 
     @IBAction private func touchNewGame(_ sender: UIButton) {
@@ -56,7 +62,6 @@ class ConcentrationViewController: UIViewController {
         let formatString = NSLocalizedString("Starting a new game with theme %s",
                                              comment: "This is the name of the label")
         print(String.localizedStringWithFormat(formatString, theme ?? "??"))
-//        print("Staring a new game with theme \(theme ?? "??")")
         game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
         newGameButton.isHidden = true
         newGameButton.isEnabled = false

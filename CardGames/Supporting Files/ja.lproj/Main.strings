@@ -5,7 +5,7 @@
 "9Iw-my-Txe.normalTitle" = "旗";
 
 /* Class = "UILabel"; text = "Score："; ObjectID = "AA2-bJ-CIE"; */
-"AA2-bJ-CIE.text" = "スコア:";
+"AA2-bJ-CIE.text" = "スコア";
 
 /* Class = "UIButton"; normalTitle = "Food"; ObjectID = "CbU-qB-6JA"; */
 "CbU-qB-6JA.normalTitle" = "食べ物";
@@ -20,7 +20,7 @@
 "GRA-68-OJJ.text" = "勝";
 
 /* Class = "UILabel"; text = "0"; ObjectID = "J9S-zH-rN1"; */
-"J9S-zH-rN1.text" = "999";
+"J9S-zH-rN1.text" = "0";
 
 /* Class = "UILabel"; text = "Score:"; ObjectID = "lZQ-ER-Fpw"; */
 "lZQ-ER-Fpw.text" = "スコア:";

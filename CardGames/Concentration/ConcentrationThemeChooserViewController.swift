@@ -34,10 +34,14 @@ class ConcentrationThemeChooserViewController: UIViewController, UISplitViewCont
         }
         return false
     }
-    // MARK: - Navigation
+
     private var lastSeguedToConcentrationViewController: ConcentrationViewController?
     private var splitViewDetailConcentrationVC: ConcentrationViewController? {
         return splitViewController?.viewControllers.last as? ConcentrationViewController
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.title = NSLocalizedString("Theme", comment: "Title for the theme choose")
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -46,10 +50,19 @@ class ConcentrationThemeChooserViewController: UIViewController, UISplitViewCont
         }
         print("themeName: \(identifier)")
 
-        if let concentrationVC = segue.destination as? ConcentrationViewController {
+        if let concentrationVC = segue.destination.contents as? ConcentrationViewController {
             print("Setting theme")
             concentrationVC.theme = theme
             lastSeguedToConcentrationViewController = concentrationVC
         }
+    }
+}
+
+extension UIViewController {
+    var contents: UIViewController {
+        if let navcon = self as? UINavigationController {
+            return navcon.visibleViewController ?? navcon
+        }
+        return self
     }
 }

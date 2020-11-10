@@ -1,2 +1,8 @@
+/* This is the link back to the theme choose */
+"Pick theme" = "Pick theme";
+
 /* This is the name of the label */
 "Starting a new game with theme %s" = "Starting a new game with theme %s";
+
+/* Title for the theme choose */
+"Theme" = "Themes";

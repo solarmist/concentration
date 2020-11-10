@@ -1,2 +1,8 @@
+/* This is the link back to the theme choose */
+"Pick theme" = "テーマを選ぶ";
+
 /* This is the name of the label */
 "Starting a new game with theme %s" = "%sをテーマにした新しいゲームの開始";
+
+/* Title for the theme choose */
+"Theme" = "テーマ";
