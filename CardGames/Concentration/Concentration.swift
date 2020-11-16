@@ -26,8 +26,10 @@ class Concentration {
     }
 
     func chooseCard(at index: Int) {
-        if matchedCards.contains(cards[index]) { return }
-        assert(cards.indices.contains(index), "Concentration.chooseCard(at: \(index)).")
+        guard cards.indices.contains(index), !matchedCards.contains(cards[index]) else {
+            return
+        }
+
         if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
             if cards[matchIndex] == cards[index] {
                 matchedCards.append(cards[matchIndex])
@@ -56,7 +58,11 @@ class Concentration {
             let card = Card<GenericFace>(faceValue: GenericFace())
             cards += [card, card]
         }
-        cards.shuffle()
+        if !Thread.current.isRunningXCTest {
+            cards.shuffle()
+        } else {
+            print("Not randomizing cards for testing")
+        }
     }
 
 }

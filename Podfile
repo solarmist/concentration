@@ -5,6 +5,7 @@ target 'CardGames' do
   # Pods for CardGames
   pod 'SwiftLint', '~> 0.41.0'
   pod 'SwiftGen', '~> 6.4.0'
+  pod 'BartyCrouch', '~> 4.3.1'
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 

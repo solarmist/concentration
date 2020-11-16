@@ -34,3 +34,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 }
+
+extension Thread {
+    var isRunningXCTest: Bool {
+        for key in threadDictionary.allKeys {
+            guard let keyAsString = key as? String else {
+                continue
+            }
+            if keyAsString.split(separator: ".").contains("xctest") {
+                return true
+            }
+        }
+        return false
+    }
+}

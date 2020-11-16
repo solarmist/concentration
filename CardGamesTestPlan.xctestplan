@@ -1,0 +1,32 @@
+{
+  "configurations" : [
+    {
+      "id" : "7EA22489-EC7E-457E-81A8-33D9CF08632C",
+      "name" : "English",
+      "options" : {
+        "language" : "en"
+      }
+    },
+    {
+      "id" : "5E71C788-5838-45BE-B80D-3FAF2E695C5A",
+      "name" : "Japanese",
+      "options" : {
+        "language" : "ja"
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:CardGames.xcodeproj",
+        "identifier" : "7E706D9025632EB700EF5B88",
+        "name" : "CardGamesTests"
+      }
+    }
+  ],
+  "version" : 1
+}
